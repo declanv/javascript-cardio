@@ -84,15 +84,3 @@ nav a {
   transition:all 0.2s;
   text-transform: uppercase;
 }
-
-.sticky nav {
-  position: fixed;
-}
-
-.sticky .site-wrap {
-  transform: scale(1);
-}
-
-.sticky li.logo {
-  max-width: 500px;
-}

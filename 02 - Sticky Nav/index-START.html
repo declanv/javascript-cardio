@@ -59,27 +59,6 @@
 
 <script>
 
-
-
-  $(document).ready(function(){
-
-    var nav = $('#main');
-    var navTop = nav.offset().top;
-
-    $(window).on('scroll', function() {
-
-      if ($(window).scrollTop() >= navTop) {
-        $('body').addClass('sticky');
-        $('body').css('padding-top', nav.outerHeight());
-      } else {
-        $('body').removeClass('sticky');
-        $('body').css('padding-top', 0);
-      }
-
-    });
-
-  })
-
 </script>
 
 </body>
