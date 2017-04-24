@@ -92,8 +92,16 @@
       console.log(e.target);
       console.log("here's the full-on event", e.keyCode);
 
-      var audio = $('audio[date-key="65"]').play();
+      var audio = $('audio[data-key="' + e.keyCode + '"]')[0];
+      var key = $('.key[data-key="' + e.keyCode + '"]');
       
+      if (!audio) {
+        return;
+      }
+
+      audio.currentTime = 0;
+      audio.play();
+      key.addClass('playing');
 
     });
 
