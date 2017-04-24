@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>Sticky Nav</title>
   <link rel="stylesheet" href="style-START.css">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -54,6 +58,27 @@
   </div>
 
 <script>
+
+
+
+  $(document).ready(function(){
+
+    var nav = $('#main');
+    var navTop = nav.offset().top;
+
+    $(window).on('scroll', function() {
+
+      if ($(window).scrollTop() >= navTop) {
+        $('body').addClass('sticky');
+        $('body').css('padding-top', nav.outerHeight());
+      } else {
+        $('body').removeClass('sticky');
+        $('body').css('padding-top', 0);
+      }
+
+    });
+
+  })
 
 </script>
 
