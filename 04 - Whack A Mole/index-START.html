@@ -37,65 +37,6 @@
   </div>
 
 <script>
-  var holes = document.querySelectorAll('.hole');
-  var scoreBoard = document.querySelector('.score');
-  var moles = document.querySelectorAll('.mole');
-  var score = 0;
-  var timeUp = false;
-
-  function randomTime(min, max) {
-    return Math.round(Math.random() * (max - min) + min);
-  }
-
-
-  var peep = function() {
-    var randoTime = randomTime(200, 1000);
-    var randomIndex = Math.floor(Math.random() * holes.length);
-    randomMole = $(moles[randomIndex]);
-
-    randomMole.parent().addClass('up');
-
-    window.setTimeout(function() {
-      randomMole.parent().removeClass('up');
-      peep();
-    }, randoTime)
-
-  } 
-
-  var startGame = function() {
-    $('.score').text('0')
-    score = 0;
-    peep();
-    window.setTimeout(function(){
-      timeUp = true;
-    }, 10000)
-  }
-
-  var bonk = function(e) {
-    if (!e.isTrusted) {
-      return;
-    }
-    score++;
-    $(e.target).parent().removeClass('up');
-    debugger;
-    scoreBoard.text(score);
-  }
-
-  $('.mole').on('click', function(e){
-    console.log('you bonked me!');
-    // if (!e.isTrusted) {
-    //   return;
-    // }
-    score++;
-    $(e.target).parent().removeClass('up');
-    debugger;
-    $('.score').text(score);
-  })
-
-  $('#start-button').on('click', function() {
-    startGame();
-  })
-
 
 </script>
 </body>
