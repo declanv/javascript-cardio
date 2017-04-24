@@ -88,3 +88,11 @@ nav a {
 .sticky nav {
   position: fixed;
 }
+
+.sticky .site-wrap {
+  transform: scale(1);
+}
+
+.sticky li.logo {
+  max-width: 500px;
+}
